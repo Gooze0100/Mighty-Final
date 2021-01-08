@@ -1,0 +1,14 @@
+Galutinio darbo rekomenduojami minimalus reikalavimai
+
+1. Tai turetu būti internetinė svetainė.
+2. Vieno ar keletos puslapiu. Jei vienas puslapis tai turi tureti bent 3-5 skirtingas sekcijas.
+3. Navigacija turetu padeti vartojui atsidurti norimoje svetaines vietoje.
+4. Viena is sekciju/psl turetu buti forma.
+    4a. Formos laukai turetu buti validuojami is back end ir/arba front end
+5. Javascript turetu atlikti kazkoki dinamiskuma. tai gali buti:
+    a. kazkokie accordionai,
+    b. laikas, data
+    c. slideris.
+    d. Sticky meniu elementas.
+    e.Formos lauko ivedimo patikrinimas realiu laiku.
+6. puslapis turetu buti bent minimaliai pritaikytas mobiliems irenginiams.
