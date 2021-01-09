@@ -110,7 +110,7 @@ li {
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 1999;
+    z-index: 1998;
 }
 
 .start {
@@ -130,9 +130,20 @@ li {
     font-size: 28px;
 }
 
-/* .offcanvas-menu {
-    transform: translateX(0%);
-} */
+.offcanvas-menu {
+    width: 0%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1999;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.3s all ease-in-out;
+}
+
+.sticky {
+    width: 300px;
+}
 
 /* Hero section =========================================================== */
 
@@ -1238,7 +1249,7 @@ footer {
 }
 
 .comment-body p a {
-    padding: 5px 10px;
+    padding: 8px 10px 4px;
     background-color: #e6e6e6;
     color: #000;
     text-transform: uppercase;

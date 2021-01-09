@@ -6,18 +6,28 @@ const sideMenu = document.querySelector('.site-mobile-menu');
 const offcanvasMenu = document.querySelector('#offcanvas-menu');
 
 activateSideMenu.addEventListener('click', function() {
-    offcanvasMenu.style.width = '100%'
-    sideMenu.style.width = '300px';
+    sideMenu.classList.add('sticky');
+    offcanvasMenu.style.width = '100%';
+    console.log('opened');
 });
 
 closeSideMenu.addEventListener('click', function() {
-    sideMenu.style.width = '0px';
+    sideMenu.classList.remove('sticky');
+    offcanvasMenu.style.width = '0%';
+    console.log('closed');
 });
 
-// offcanvasMenu.addEventListener('click', function() {
-//     offcanvasMenu.style.transform = 'translate(110%)'
-//     sideMenu.style.width = '0px';
-// })
+offcanvasMenu.addEventListener('click', function() {
+    sideMenu.classList.remove('sticky');
+    offcanvasMenu.style.width = '0%';
+})
+
+
+
+
+
+
+
 
 
 

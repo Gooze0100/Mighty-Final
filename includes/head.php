@@ -13,4 +13,4 @@
 </head>
 
 <body>
-    <div id="offcanvas-menu" class="offcanvas-menu">
+    <div id="offcanvas-menu" class="offcanvas-menu"></div>

@@ -9,8 +9,6 @@
     });
 </script>
 
-</div>
-
 </body>
 
 </html>
