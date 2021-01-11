@@ -15,20 +15,24 @@ require('./includes/hero.php');
     <div class="container">
         <div class="flex-align">
             <div class="contact-first-block padding">
-                <form action="./contact_info.php" method="POST">
+                <!-- irasyti success page -->
+                <form action="#" method="POST">
                     <div class="first-row">
                         <div class="first-name row">
-                            <input type="text" placeholder="First Name" id="first-name" class="form-control" name="first-name" />
+                            <input type="text" placeholder="First Name" id="first-name" class="form-control <?php echo $inputField ?>" name="first-name" />
+                            <div class="input-error-cont"> <?php echo $contFirstNameErr ?></div>
                         </div>
                         <div class="last-name row">
-                            <input type="text" placeholder="Last Name" id="last-name" class="form-control" name="last-name" />
+                            <input type="text" placeholder="Last Name" id="last-name" class="form-control <?php echo $inputField ?>" name="last-name" />
+                            <div class="input-error-cont"> <?php echo $contLastNameErr ?></div>
                         </div>
                     </div>
                     <div class="email row">
-                        <input type="text" placeholder="Email address" id="email" class="form-control" name="email" />
+                        <input type="text" placeholder="Email address" id="email" class="form-control <?php echo $inputField ?>" name="email" />
+                        <div class="input-error-cont"> <?php echo $contEmailErr ?></div>
                     </div>
                     <div class="message row">
-                        <textarea name="text" id="" cols="30" rows="10" class="form-message" placeholder="Write your message."></textarea>
+                        <textarea name="messageText" id="" cols="30" rows="10" class="form-message" placeholder="Write your message."></textarea>
                     </div>
                     <div class="btn-send-contacts">
                         <input type="submit" value="Send Message" class="send-message-btn" />

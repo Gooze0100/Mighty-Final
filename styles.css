@@ -137,7 +137,7 @@ li {
     bottom: 0;
     left: 0;
     z-index: 1999;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: 0.3s all ease-in-out;
 }
 
@@ -758,6 +758,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .subscribe {
@@ -1379,6 +1380,79 @@ footer {
 
 .read-more-button {
     padding: 15px 0;
+}
+
+/* Validation changes =========================================================== */
+
+.input-error {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    color: #E91414;
+    padding: 5px
+}
+
+.input-border {
+    border: 1px solid #E91414;
+}
+
+.input-border:hover, .input-border:active, .input-border:focus  {
+    border: 1px solid #E91414;
+}
+
+.input-error-cont {
+    color: #E91414;
+    padding: 5px;
+}
+
+/* Modal box =========================================================== */
+
+.modal-all {
+    display: none;
+}
+
+.modal-box-txt {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    transition: 0.3s all ease-in-out;
+}
+
+.modal-box-content {
+    text-align: center;
+    background-color: #01ac73;
+    padding: 20px;
+    border: 1px solid #01d28e;
+    width: 50%;
+    color: #364d59;
+    text-transform: uppercase;
+    transition: 0.3s all ease-in-out;
+    z-index: 2001;
+}
+
+.modal-left {
+    text-align: right;
+    color: #364d59;
+    transition: 0.3s all ease-in-out;
+}
+
+#close-modal-box {
+    cursor: pointer;
+    font-size: 25px;
+    transition: 0.3s all ease-in-out;
+}
+
+#close-modal-box:hover, #close-modal-box:focus {
+    color: #ced4da;
+}
+
+#bigger-icon {
+    font-size: 40px;
 }
 
 /* Media =========================================================== */

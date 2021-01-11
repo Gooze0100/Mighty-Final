@@ -43,9 +43,10 @@
                 <div class="newsletter-email">
                     <h2 class="footer-titles">Newsletter</h2>
                     <!-- sukurti nauja forma ir iki jos nuvaziuoti issiunciant duomenis -->
-                    <form action="foo" class="newsletter-form">
-                        <input type="text" class="subscribe" placeholder="Email" />
-                        <button type="submit" class="send-btn">Send</button>
+                    <form action="#footer" method="POST" class="newsletter-form">
+                        <input type="text" class="subscribe <?php echo $inputField ?>" placeholder="Email" name="emailSub" value="<?php echo $subEmail ?>" autocomplete="off" />
+                        <div class="input-error"> <?php echo $subEmailErr ?></div>
+                        <button type="submit" class="send-btn" name="btnSub" id="btnModalBox">Send</button>
                     </form>
                 </div>
             </div>
