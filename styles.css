@@ -275,6 +275,13 @@ li {
     flex: 0 0 33%;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .align-items-flex-start {
     align-items: flex-start;
 }
@@ -983,7 +990,7 @@ footer {
     border: 1px solid #e6e6e6;
     background-color: #fff;
     width: 100%;
-    padding: 6px 12px;
+    padding: 10px 12px;
     font-size: 16px;
     font-weight: 400;
     color: #495057;
@@ -1394,9 +1401,10 @@ footer {
 
 .input-border {
     border: 1px solid #E91414;
+    transition: 0.3s all;
 }
 
-.input-border:hover, .input-border:active, .input-border:focus  {
+.input-border:hover, .input-border:active, .input-border:focus {
     border: 1px solid #E91414;
 }
 
@@ -1405,54 +1413,83 @@ footer {
     padding: 5px;
 }
 
+.input-margin-bot {
+    margin-bottom: 27px;
+}
+
 /* Modal box =========================================================== */
 
-.modal-all {
+.modal {
     display: none;
-}
-
-.modal-box-txt {
     position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    width: 100vw;
+    z-index: 2500;
+    left: 0;
+    top: 0;
     height: 100vh;
-    background-color: rgba(0,0,0,0.4);
-    transition: 0.3s all ease-in-out;
+    width: 100vw;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-box-content {
-    text-align: center;
-    background-color: #01ac73;
+.modal-content {
+    background-color: #efefef;
+    margin: 20% auto;
     padding: 20px;
-    border: 1px solid #01d28e;
-    width: 50%;
-    color: #364d59;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
-    transition: 0.3s all ease-in-out;
-    z-index: 2001;
-}
-
-.modal-left {
-    text-align: right;
+    border: 8px solid #01d28e;
+    text-align: center;
     color: #364d59;
-    transition: 0.3s all ease-in-out;
 }
 
-#close-modal-box {
+.close-btn {
+    color: rgb(1, 210, 142);
+    float: right;
+    font-size: 30px;
+    transition: 0.3s all;
+}
+
+.close-btn:focus, .close-btn:hover {
+    color: rgb(1, 134, 91);
     cursor: pointer;
-    font-size: 25px;
-    transition: 0.3s all ease-in-out;
 }
 
-#close-modal-box:hover, #close-modal-box:focus {
-    color: #ced4da;
+.done {
+    display: block;
+    position: fixed;
+    z-index: 2500;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-#bigger-icon {
-    font-size: 40px;
+/* Success Page =========================================================== */
+
+.succ-message {
+    color: #364d59;
+    text-align: center;
+    padding: 26px;
+}
+
+.home-page {
+    color: #364d59;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(1, 210, 142);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.home-page a:hover {
+    color: rgb(1, 134, 91);
+}
+
+.home-page span {
+    margin-right: 5px;
 }
 
 /* Media =========================================================== */

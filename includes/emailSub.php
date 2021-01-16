@@ -1,4 +1,5 @@
 <?php
+
 function clearInput($input)
 {
     $input = htmlspecialchars($input);
@@ -8,22 +9,21 @@ function clearInput($input)
 
 $subEmail = '';
 $subEmailErr = '';
+$done = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Email validation ====================================================================================
-    // pasitikrinti ar reiksme nustatyta ir ar netuscia
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnSub'])) {
+    // Email validation for subscription form ====================================================================================
     if (empty($_POST['emailSub'])) {
-        // tuscia
         $subEmailErr = 'Email field is required!';
-        $inputField = 'input-border';
+        $inputFieldSub = 'input-border';
     } else {
-        // uzpildyta
-        // isvalom reiksme ir issaugom
         $subEmail = clearInput($_POST['emailSub']);
-        // patiktinti ar email yra tinkamo formato su sauktuku isverciam reiksme jei email blogas tada patikrinti
         if (!filter_var($subEmail, FILTER_VALIDATE_EMAIL)) {
             $subEmailErr = 'Invalid email address!';
-            $inputField = 'input-border';
+            $inputFieldSub = 'input-border';
+        } else {
+            $subEmail = '';
+            $done = 'done';
         }
     }
 }

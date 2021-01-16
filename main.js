@@ -20,29 +20,95 @@ offcanvasMenu.addEventListener('click', function() {
     offcanvasMenu.style.width = '0%';
 });
 
-// Footer Subscription ===========================================================
+// Footer Subscription / Modal box ===========================================================
 
 const footerBtn = document.querySelector('#btnModalBox');
-const modalBox = document.querySelector('#modalAll');
-const closeModalBox = document.querySelector('#close-modal-box');
-// const closeModalBoxBack = document.querySelector()
+const modal = document.querySelector('#modal');
+const closeM = document.querySelector('#closeBtn');
 
-footerBtn.addEventListener('click', function() {
-    modalBox.style.display = 'block';
-});
+// footerBtn.addEventListener('click', openModal);
+closeM.addEventListener('click', closeModal);
+window.document.addEventListener('click', outsideModal);
 
-closeModalBox.addEventListener('click', function() {
-    modalBox.style.display = 'none';
-})
+function openModal() {
+    modal.style.display = 'block';
+}
 
-modalBox.addEventListener('click', function() {
-    modalBox.style.display = 'none';
-})
+function closeModal() {
+    modal.style.display = 'none';
+}
 
+function outsideModal(e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
-//  ===========================================================
+// Subscription validation ===========================================================
+const subEmailInput = document.querySelector('#subEmailInput');
+const subEmailInputErr = document.querySelector('#subEmailErr');
 
+subEmailInput.addEventListener('input', subEmailVal);
 
+function subEmailVal () {
+    const subEmail = subEmailInput.value;
+    if (subEmail.length < 7) {
+        subEmailInputErr.innerHTML = 'Minimum email length must be 7 characters';
+    }   else if (subEmail.length > 254) {
+        subEmailInputErr.innerHTML = 'Maximum email length must be 254 characters';
+    }   else {
+        subEmailInputErr.innerHTML = '';
+    }
+}
+
+// Contact Form Validation ===========================================================
+
+const firstNameInput = document.querySelector('#firstName');
+const lastNameInput = document.querySelector('#lastName');
+const emailInput = document.querySelector('#email');
+const firstNameInputErr = document.querySelector('#fName');
+const lastNameInputErr = document.querySelector('#lName');
+const emailInputErr = document.querySelector('#emailForm');
+
+firstNameInput.addEventListener('input', firstNameVal);
+lastNameInput.addEventListener('input', lastNameVal);
+emailInput.addEventListener('input', emailVal);
+
+// First Name validation ==========================
+function firstNameVal () {
+    const firstNameVal = firstNameInput.value;
+    if (firstNameVal.length < 2) {
+        firstNameInputErr.innerHTML = 'Minimum name length must be 2 characters';
+    } else if (firstNameVal.length > 26) {
+        firstNameInputErr.innerHTML = 'Maximum name length must be 26 characters';
+    }   else {
+        firstNameInputErr.innerHTML = '';
+    }
+}
+
+// Last Name validation ==========================
+function lastNameVal () {
+    const lastNameVal = lastNameInput.value;
+    if (lastNameVal.length < 2) {
+        lastNameInputErr.innerHTML = 'Minimum surname length must be 2 characters';
+    } else if (lastNameVal.length > 26) {
+        lastNameInputErr.innerHTML = 'Maximum surname length must be 26 characters';
+    }   else {
+        lastNameInputErr.innerHTML = '';
+    }
+}
+
+// Email validation ==========================
+function emailVal () {
+    const emailVal = emailInput.value;
+    if (emailVal.length < 7) {
+        emailInputErr.innerHTML = 'Minimum email length must be 7 characters';
+    } else if (emailVal.length > 254) {
+        emailInputErr.innerHTML = 'Maximum email length must be 254 characters';
+    }   else {
+        emailInputErr.innerHTML = '';
+    }
+}
 
 
 // Footer Date ===========================================================
