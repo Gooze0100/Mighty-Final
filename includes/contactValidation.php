@@ -52,15 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
         }
     }
 
-    // Flags ====================================================================================
-    if (($name != false) && ($surname != false) && ($email != false)) {
-        $contactUsDone = 'done-contact';
-    }
-
     // Message validation ====================================================================================
     if (empty($_POST['messageText'])) {
         $contMessage = '';
     } else {
         $contMessage = clearInput($_POST['messageText']);
+    }
+
+    // Flags ====================================================================================
+    if (($name != false) && ($surname != false) && ($email != false)) {
+        $contFirstName = $contLastName = $contEmail = $contMessage = '';
+        $contactUsDone = 'done-contact';
     }
 }

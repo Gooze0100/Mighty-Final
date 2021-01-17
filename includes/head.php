@@ -3,6 +3,8 @@
 require('./includes/emailSub.php');
 // <!-- Contacts page validation ===============================================-->
 require('./includes/contactValidation.php');
+// <!-- Single page validation ===============================================-->
+require('./includes/commentValidation.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

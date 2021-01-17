@@ -33,7 +33,7 @@ require('./includes/contactValidation.php');
                         <div class="input-error-cont" id="emailForm"><?php echo $contEmailErr ?></div>
                     </div>
                     <div class="message row">
-                        <textarea name="messageText" id="" cols="30" rows="10" class="form-message" placeholder="Write your message." value="<?php echo $contMessage ?>"></textarea>
+                        <textarea name="messageText" id="" cols="30" rows="10" class="form-message" placeholder="Write your message."><?php echo $contMessage ?></textarea>
                     </div>
                     <div class="btn-send-contacts">
                         <input type="submit" value="Send Message" name="btnContact" class="send-message-btn" />

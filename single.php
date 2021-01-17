@@ -54,7 +54,7 @@ require('./includes/hero.php');
                         <a href="#">#trends</a>
                     </p>
                 </div>
-                <div class="comments-block">
+                <div class="comments-block" id="all-comments">
                     <h3 class="comments-block-title">6 Comments</h3>
                     <ul class="comment-lists">
                         <li class="comment-list">
@@ -151,25 +151,28 @@ require('./includes/hero.php');
                 </div>
                 <div class="comment-form">
                     <h3>Leave a comment</h3>
-                    <form action="./comments.php">
+                    <form action="#all-comments" method="POST">
                         <div class="form-group">
                             <label for="name">Name *</label>
-                            <input type="text" class="form-control margin-top" id="name">
+                            <input type="text" class="form-control margin-top <?php echo $inputFieldName ?>" id="commName" name="commFullName" value="<?php echo $commName ?>">
+                            <div class="input-error-cont" id="commNameErr"><?php echo $commNameErr ?></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" class="form-control margin-top" id="email">
+                            <input type="email" class="form-control margin-top <?php echo $inputFieldEmail ?>" id="commEmail" name="commEmail" value="<?php echo $commEmail ?>">
+                            <div class="input-error-cont" id="commEmailErr"><?php echo $commEmailErr ?></div>
                         </div>
                         <div class="form-group">
                             <label for="website">Website</label>
-                            <input type="url" class="form-control margin-top" id="website">
+                            <input type="url" class="form-control margin-top <?php echo $inputFieldWebsite ?>" id="commWebsite" name="commWebsite" value="<?php echo $commWebsite ?>">
+                            <div class="input-error-cont" id="commWebsiteErr"><?php echo $commWebsiteErr ?></div>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea name="message" id="message" cols="30" rows="15" class="form-message margin-top"></textarea>
+                            <textarea name="commMessage" id="commMessage" cols="30" rows="15" class="form-message margin-top"><?php echo $commMessage ?></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Post Comment" class="send-btn text-white">
+                            <input type="submit" value="Post Comment" id="commentBtn" name="btnComments" class="send-btn text-white">
                         </div>
                     </form>
                 </div>

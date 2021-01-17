@@ -1,4 +1,5 @@
 "use strict"
+
 // Menu ===========================================================
 const activateSideMenu = document.querySelector('#siteMenuPop');
 const closeSideMenu = document.querySelector('#closeSid');
@@ -28,11 +29,11 @@ const closeM = document.querySelector('#closeBtn');
 closeM.addEventListener('click', closeModal);
 window.document.addEventListener('click', outsideModal);
 
-function closeModal () {
+function closeModal() {
     modal.style.display = 'none';
 }
 
-function outsideModal (e) {
+function outsideModal(e) {
     if (e.target == modal) {
         modal.style.display = 'none';
     }
@@ -49,11 +50,11 @@ const modalCloseContactUs = document.querySelector('#closeContactBtn');
 modalCloseContactUs.addEventListener('click', closeContactUs);
 window.addEventListener('click', closeContactOutside)
 
-function closeContactUs () {
+function closeContactUs() {
     modalContactUs.style.display = 'none';
 }
 
-function closeContactOutside (e) {
+function closeContactOutside(e) {
     if (e.target == modalContact) {
         modalContactUs.style.display = 'none';
     }
@@ -69,7 +70,7 @@ const subEmailInputErr = document.querySelector('#subEmailErr');
 
 subEmailInput.addEventListener('input', subEmailVal);
 
-function subEmailVal () {
+function subEmailVal() {
     const subEmail = subEmailInput.value;
     if (subEmail.length < 7) {
         subEmailInputErr.innerHTML = 'Minimum email length must be 7 characters';
@@ -80,8 +81,7 @@ function subEmailVal () {
     }
 }
 
-// Contact Form Validation ===========================================================
-
+// Contact Page Form Validation ===========================================================
 const firstNameInput = document.querySelector('#firstName');
 const lastNameInput = document.querySelector('#lastName');
 const emailInput = document.querySelector('#email');
@@ -94,7 +94,7 @@ lastNameInput.addEventListener('input', lastNameVal);
 emailInput.addEventListener('input', emailVal);
 
 // First Name validation ==========================
-function firstNameVal () {
+function firstNameVal() {
     const firstNameVal = firstNameInput.value;
     if (firstNameVal.length < 2) {
         firstNameInputErr.innerHTML = 'Minimum name length must be 2 characters';
@@ -106,7 +106,7 @@ function firstNameVal () {
 }
 
 // Last Name validation ==========================
-function lastNameVal () {
+function lastNameVal() {
     const lastNameVal = lastNameInput.value;
     if (lastNameVal.length < 2) {
         lastNameInputErr.innerHTML = 'Minimum surname length must be 2 characters';
@@ -118,7 +118,7 @@ function lastNameVal () {
 }
 
 // Email validation ==========================
-function emailVal () {
+function emailVal() {
     const emailVal = emailInput.value;
     if (emailVal.length < 7) {
         emailInputErr.innerHTML = 'Minimum email length must be 7 characters';
@@ -128,6 +128,59 @@ function emailVal () {
         emailInputErr.innerHTML = '';
     }
 }
+
+// Single Page Form Validation ===========================================================
+// padaryti atsikiruose psl viso php kad nekrautu sita tipo if title yra toks tada tik ji uzkrauti :(
+const commNameInput = document.querySelector('#commName');
+const commEmailInput = document.querySelector('#commEmail');
+const commWebsiteInput = document.querySelector('#commWebsite');
+const commNameInputErr = document.querySelector('#commNameErr');
+const commEmailInputErr = document.querySelector('#commEmailErr');
+const commWebsiteInputErr = document.querySelector('#commWebsiteErr');
+
+commNameInput.addEventListener('input', commNameValidation);
+commEmailInput.addEventListener('input', commEmailValidation);
+commWebsiteInput.addEventListener('input', commWebsiteValidation);
+
+// Comment Page Name validation ==========================
+function commNameValidation() {
+    const commName = commNameInput.value;
+    if (commName.length < 2) {
+        commNameInputErr.innerHTML = 'Minimum name length must be 2 characters';
+    } else if (commName.length > 26) {
+        commNameInputErr.innerHTML = 'Maximum name length must be 26 characters';
+    }   else {
+        commNameInputErr.innerHTML = '';
+    }
+}
+
+// Comment Page Email validation ==========================
+function commEmailValidation() {
+    const commEmail = commEmailInput.value;
+    if (commEmail.length < 2) {
+        commEmailInputErr.innerHTML = 'Minimum name length must be 7 characters';
+    } else if (commEmail.length > 26) {
+        commEmailInputErr.innerHTML = 'Maximum name length must be 254 characters';
+    }   else {
+        commEmailInputErr.innerHTML = '';
+    }
+}
+
+// Comment Page Website validation ==========================
+function commWebsiteValidation() {
+    const commWebsite = commWebsiteInput.value;
+    if (commWebsite.length < 2) {
+        commWebsiteInputErr.innerHTML = 'Minimum name length must be 5 characters';
+    } else if (commWebsite.length > 26) {
+        commWebsiteInputErr.innerHTML = 'Maximum name length must be 254 characters';
+    }   else {
+        commWebsiteInputErr.innerHTML = '';
+    }
+}
+
+
+
+
 
 // Footer Date ===========================================================
 const footerDate = document.getElementById('footer-date');

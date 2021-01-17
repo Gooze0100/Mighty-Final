@@ -10,7 +10,7 @@
             <li><a class="nav-link <?php if ($title === 'About Us') echo 'activate' ?>" href="./about.php">About</a></li>
             <li><a class="nav-link <?php if ($title === 'Our Works' || $title === 'Foam Sweet Foam') echo 'activate' ?>" href="./works.php">Work</a></li>
             <li><a class="nav-link <?php if ($title === 'Journal' || $title === 'Single Blog') echo 'activate' ?>" href="./journal.php">Journal</a></li>
-            <li><a class="nav-link <?php if ($title === 'Contacts' || $title === 'Success!') echo 'activate' ?>" href="./contacts.php">Contact</a></li>
+            <li><a class="nav-link <?php if ($title === 'Contacts') echo 'activate' ?>" href="./contacts.php">Contact</a></li>
         </ul>
     </nav>
 </header>
