@@ -2,6 +2,7 @@
 
 $contFirstName = $contLastName = $contEmail = $contMessage = '';
 $contFirstNameErr = $contLastNameErr = $contEmailErr = $contMessageErr = '';
+$contactUsDone = '';
 
 $name = false;
 $surname = false;
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
 
     // Flags ====================================================================================
     if (($name != false) && ($surname != false) && ($email != false)) {
-        header('Location: ./successPage.php');
+        $contactUsDone = 'done-contact';
     }
 
     // Message validation ====================================================================================

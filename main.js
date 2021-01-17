@@ -21,27 +21,46 @@ offcanvasMenu.addEventListener('click', function() {
 });
 
 // Footer Subscription / Modal box ===========================================================
-
-const footerBtn = document.querySelector('#btnModalBox');
+// const footerBtn = document.querySelector('#btnModalBox');
 const modal = document.querySelector('#modal');
 const closeM = document.querySelector('#closeBtn');
 
-// footerBtn.addEventListener('click', openModal);
 closeM.addEventListener('click', closeModal);
 window.document.addEventListener('click', outsideModal);
 
-function openModal() {
-    modal.style.display = 'block';
-}
-
-function closeModal() {
+function closeModal () {
     modal.style.display = 'none';
 }
 
-function outsideModal(e) {
+function outsideModal (e) {
     if (e.target == modal) {
         modal.style.display = 'none';
     }
+}
+
+if (modal.classList.contains('done')) {
+    setTimeout(closeModal, 3000)
+}
+
+// Contact Us / Modal box ===========================================================
+const modalContactUs = document.querySelector('#modalContact');
+const modalCloseContactUs = document.querySelector('#closeContactBtn');
+
+modalCloseContactUs.addEventListener('click', closeContactUs);
+window.addEventListener('click', closeContactOutside)
+
+function closeContactUs () {
+    modalContactUs.style.display = 'none';
+}
+
+function closeContactOutside (e) {
+    if (e.target == modalContact) {
+        modalContactUs.style.display = 'none';
+    }
+}
+
+if (modalContactUs.classList.contains('done-contact')) {
+    setTimeout(closeContactUs, 4000)
 }
 
 // Subscription validation ===========================================================
@@ -109,7 +128,6 @@ function emailVal () {
         emailInputErr.innerHTML = '';
     }
 }
-
 
 // Footer Date ===========================================================
 const footerDate = document.getElementById('footer-date');

@@ -1,6 +1,8 @@
 <?php
 // <!-- Subscription page section ===============================================-->
 require('./includes/emailSub.php');
+// <!-- Contacts page validation ===============================================-->
+require('./includes/contactValidation.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +21,20 @@ require('./includes/emailSub.php');
 <body>
     <!-- Off-canvas menu======================================================================-->
     <div id="offcanvas-menu" class="offcanvas-menu"></div>
-    <!-- The Modal Box======================================================================-->
+    <!-- The Modal Box for Subscription======================================================================-->
     <div id="modal" class="modal <?php echo $done ?>">
         <div class="modal-content">
             <span class="close-btn" id="closeBtn">&times;</span>
             <h1>Thank you</h1>
             <h2>for your subscription!</h2>
+        </div>
+    </div>
+    <!-- The Modal Box for Contact Us======================================================================-->
+    <div id="modalContact" class="modal-contact <?php echo $contactUsDone ?>">
+        <div class="modal-content-contact">
+            <span class="close-btn-contact" id="closeContactBtn">&times;</span>
+            <h1>Thanks you for contacting us!</h1>
+            <h2>We will answer shortly!</h2>
+            <a href="./index.php"><span><i class="fa fa-arrow-circle-o-left contact-arr" aria-hidden="true"></i></span>Back to main page</a>
         </div>
     </div>

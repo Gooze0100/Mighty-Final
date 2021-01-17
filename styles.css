@@ -1417,7 +1417,7 @@ footer {
     margin-bottom: 27px;
 }
 
-/* Modal box =========================================================== */
+/* Modal box for subscribe =========================================================== */
 
 .modal {
     display: none;
@@ -1447,16 +1447,24 @@ footer {
     color: rgb(1, 210, 142);
     float: right;
     font-size: 30px;
+    cursor: pointer;
     transition: 0.3s all;
 }
 
 .close-btn:focus, .close-btn:hover {
     color: rgb(1, 134, 91);
-    cursor: pointer;
 }
 
 .done {
     display: block;
+    animation-name: openModal;
+    animation-duration: 1s;
+}
+
+/* Modal Box for contact us =========================================================== */
+
+.modal-contact {
+    display: none;
     position: fixed;
     z-index: 2500;
     left: 0;
@@ -1467,29 +1475,54 @@ footer {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Success Page =========================================================== */
-
-.succ-message {
-    color: #364d59;
-    text-align: center;
-    padding: 26px;
-}
-
-.home-page {
-    color: #364d59;
-    text-align: center;
-    font-size: 20px;
-    color: rgb(1, 210, 142);
+.modal-content-contact {
+    background-color: #efefef;
+    margin: 20% auto;
     padding: 20px;
-    margin-bottom: 15px;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    border: 8px solid #01d28e;
+    text-align: center;
+    color: #364d59;
 }
 
-.home-page a:hover {
+.modal-content-contact a {
+    font-size: 20px;
+}
+
+.contact-arr {
+    margin-right: 5px;
+}
+
+.close-btn-contact {
+    color: rgb(1, 210, 142);
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.close-btn-contact:focus, .close-btn-contact:hover {
     color: rgb(1, 134, 91);
 }
 
-.home-page span {
-    margin-right: 5px;
+.done-contact {
+    display: block;
+    animation-name: openModalForCont;
+    animation-duration: 1s;
+}
+
+/* Keyframes =========================================================== */
+
+@keyframes openModal {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes openModalForCont {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 /* Media =========================================================== */
@@ -1630,6 +1663,10 @@ footer {
     .second-single-block {
         max-width: 100%;
     }
+
+    .modal-content {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -1680,6 +1717,10 @@ footer {
 
     .btn-send-contacts {
         max-width: 100%;
+    }
+    
+    .modal-content {
+        width: 100%;
     }
 }
 
