@@ -8,7 +8,15 @@
         }
     });
 </script>
+<?php
+if ($title === 'Single Blog') {
+    echo '<script src="./includes/JS/singlePageFV.js"></script>';
+}
 
+if ($title === 'Contacts') {
+    echo '<script src="./includes/JS/contactFV.js"></script>';
+}
+?>
 </body>
 
 </html>
