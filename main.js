@@ -82,6 +82,8 @@ function subEmailVal() {
 }
 
 
+// padaryti button validation kad button active jei laukai uzpildyti
+
 
 // Footer Date ===========================================================
 const footerDate = document.getElementById('footer-date');
