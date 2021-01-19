@@ -7,6 +7,7 @@ $commentsName = false;
 $commentsEmail = false;
 $commentsWebsite = false;
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnComments'])) {
 
     // First Name validation ====================================================================================
@@ -51,16 +52,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnComments'])) {
         }
     }
 
-    // Flags ====================================================================================
-    if (($commentsName != false) && ($commentsEmail != false) && ($commentsWebsite != false)) {
-        $commName = $commEmail = $commWebsite = $commMessage = '';
-        header('Location: single.php#all-comments');
-    }
-
     // Message validation ====================================================================================
     if (empty($_POST['commMessage'])) {
         $commMessage = '';
     } else {
         $commMessage = clearInput($_POST['commMessage']);
+    }
+
+    // Flags ====================================================================================
+    if (($commentsName != false) && ($commentsEmail != false) && ($commentsWebsite != false)) {
+
+        // $name = htmlspecialchars($_POST['commFullName']);
+        // $email = htmlspecialchars($_POST['commEmail']);
+        // $website = htmlspecialchars($_POST['commWebsite']);
+        // $message = htmlspecialchars($_POST['commMessage']);
+
+        $db->insertToDB($commName, $commEmail, $commWebsite, $commMessage);
+
+        $commName = $commEmail = $commWebsite = $commMessage = '';
+        header('Location: single.php#all-comments');
     }
 }
