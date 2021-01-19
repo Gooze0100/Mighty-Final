@@ -20,3 +20,4 @@ if ($title === 'Contacts') {
 </body>
 
 </html>
+<?php $db->closeConnection(); ?>

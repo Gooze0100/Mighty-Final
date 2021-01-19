@@ -1,4 +1,7 @@
 <?php
+// <!-- Data Base Connection ===============================================-->
+require('./includes/Class/DB.php');
+$db = new DB();
 // <!-- Subscription page section ===============================================-->
 require('./includes/emailSub.php');
 // <!-- Contacts page validation ===============================================-->

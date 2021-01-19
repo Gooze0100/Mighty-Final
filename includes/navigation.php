@@ -13,6 +13,10 @@
             <li><a class="nav-link <?php if ($title === 'Contacts') echo 'activate' ?>" href="./contacts.php">Contact</a></li>
         </ul>
     </nav>
+    <div class="db-info">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+        <?php echo $db->feedback; ?>
+    </div>
 </header>
 <section>
     <div class="container">
