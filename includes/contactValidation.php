@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
             $inputFieldName = 'input-border';
         } else {
             $name = true;
+            $inputFieldName = '';
         }
     }
 
@@ -35,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
             $inputFieldSurname = 'input-border';
         } else {
             $surname = true;
+            $inputFieldSurname = '';
         }
     }
 
@@ -49,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
             $inputFieldEmail = 'input-border';
         } else {
             $email = true;
+            $inputFieldEmail = '';
         }
     }
 
@@ -61,7 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnContact'])) {
 
     // Flags ====================================================================================
     if (($name != false) && ($surname != false) && ($email != false)) {
-        $contFirstName = $contLastName = $contEmail = $contMessage = '';
+
+        $db->insertToContacts($contFirstName, $contLastName, $contEmail, $contMessage);
+
+        unset($_POST);
         $contactUsDone = 'done-contact';
+        $contFirstName = $contLastName = $contEmail = $contMessage = '';
     }
 }

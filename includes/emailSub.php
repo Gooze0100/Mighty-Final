@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnSub'])) {
             $inputFieldSub = 'input-border';
         } else {
             $subEmail = '';
+            $inputFieldSub = '';
             $done = 'done';
         }
     }

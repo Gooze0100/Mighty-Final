@@ -10,7 +10,7 @@ $commentsWebsite = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnComments'])) {
 
-    // First Name validation ====================================================================================
+    // Name validation ====================================================================================
     if (empty($_POST['commFullName'])) {
         $commNameErr = 'Name is required!';
         $inputFieldName = 'input-border';
@@ -62,14 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnComments'])) {
     // Flags ====================================================================================
     if (($commentsName != false) && ($commentsEmail != false) && ($commentsWebsite != false)) {
 
-        // $name = htmlspecialchars($_POST['commFullName']);
-        // $email = htmlspecialchars($_POST['commEmail']);
-        // $website = htmlspecialchars($_POST['commWebsite']);
-        // $message = htmlspecialchars($_POST['commMessage']);
-
         $db->insertToDB($commName, $commEmail, $commWebsite, $commMessage);
 
-        $commName = $commEmail = $commWebsite = $commMessage = '';
+        unset($_POST);
+        $commentsDone = 'done-comments';
         header('Location: single.php#all-comments');
+        $commName = $commEmail = $commWebsite = $commMessage = '';
     }
 }

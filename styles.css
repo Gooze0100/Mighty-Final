@@ -1529,6 +1529,50 @@ footer {
     animation-duration: 1s;
 }
 
+/* Modal Box for comments page =========================================================== */
+
+.modal-comments {
+    display: none;
+    position: fixed;
+    z-index: 2500;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content-comments {
+    background-color: #efefef;
+    margin: 20% auto;
+    padding: 20px;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    border: 8px solid #01d28e;
+    text-align: center;
+    color: #364d59;
+}
+
+.close-btn-comments {
+    color: rgb(1, 210, 142);
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.close-btn-comments:focus, .close-btn-comments:hover {
+    color: rgb(1, 134, 91);
+}
+
+.done-comments {
+    display: block;
+    animation-name: openModalForComm;
+    animation-duration: 1s;
+}
+
 /* Keyframes =========================================================== */
 
 @keyframes openModal {
@@ -1537,6 +1581,11 @@ footer {
 }
 
 @keyframes openModalForCont {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes openModalForComm {
     from {opacity: 0}
     to {opacity: 1}
 }

@@ -64,6 +64,27 @@ if (modalContactUs.classList.contains('done-contact')) {
     setTimeout(closeContactUs, 4000)
 }
 
+// Single Page / Comments / Modal box ===========================================================
+const modalComments = document.querySelector('#modalComments');
+const modalCloseComments = document.querySelector('#closeCommentsBtn');
+
+modalCloseComments.addEventListener('click', closeComments);
+window.addEventListener('click', closeContactsOutside)
+
+function closeComments() {
+    modalComments.style.display = 'none';
+}
+
+function closeContactsOutside(e) {
+    if (e.target == modalComments) {
+        modalComments.style.display = 'none';
+    }
+}
+
+if (modalComments.classList.contains('done-contact')) {
+    setTimeout(closeComments, 4000)
+}
+
 // Subscription validation ===========================================================
 const subEmailInput = document.querySelector('#subEmailInput');
 const subEmailInputErr = document.querySelector('#subEmailErr');
@@ -74,10 +95,13 @@ function subEmailVal() {
     const subEmail = subEmailInput.value;
     if (subEmail.length < 7 && subEmail.length >= 1) {
         subEmailInputErr.innerHTML = 'Minimum email length must be 7 characters';
+        subEmailInput.style.border = '1px solid #E91414';
     }   else if (subEmail.length > 254) {
         subEmailInputErr.innerHTML = 'Maximum email length must be 254 characters';
+        subEmailInput.style.border = '1px solid #E91414';
     }   else {
         subEmailInputErr.innerHTML = '';
+        subEmailInput.style.border = '';
     }
 }
 

@@ -40,6 +40,20 @@ require('./includes/commentValidation.php');
             <span class="close-btn-contact" id="closeContactBtn">&times;</span>
             <h1>Thanks you for contacting us!</h1>
             <h2>We will answer shortly!</h2>
+            <h3>
+                <?php echo $db->contactsFeedback; ?>
+            </h3>
             <a href="./index.php"><span><i class="fa fa-arrow-circle-o-left contact-arr" aria-hidden="true"></i></span>Back to main page</a>
+        </div>
+    </div>
+    <!-- The Modal Box for Comments Page======================================================================-->
+    <div id="modalComments" class="modal-comments <?php echo $commentsDone ?>">
+        <div class="modal-content-comments">
+            <span class="close-btn-comments" id="closeCommentsBtn">&times;</span>
+            <h1>Thanks you for comments!</h1>
+            <h2>We will get back to you soon!</h2>
+            <h3>
+                <?php echo $db->commentsFeedback; ?>
+            </h3>
         </div>
     </div>

@@ -8,7 +8,10 @@ class DB
 
     private $connection;
     public $feedback = '';
+    public $commentsFeedback = '';
+    public $contactsFeedback = '';
 
+    // Connect to Database ===========================================================================================================
     public function __construct()
     {
         $this->connection = new mysqli($this->host, $this->user, $this->password, $this->db);
@@ -20,21 +23,29 @@ class DB
         }
     }
 
+    // Insert comments ===========================================================================================================
     public function insertToDB($arg1, $arg2, $arg3, $arg4)
     {
-        // $sqlInsert = "INSERT INTO comments(`name`,`date`,`email`,`website`,`message`) VALUES ($arg1, $arg2, $arg3, $arg4, $arg5)";
-        // if (1) {
-        $sqlInsert = "INSERT INTO comments(`name`,`email`,`website`,`message`) VALUES ('$arg1', '$arg2', '$arg3', '$arg4')";
-        //     if ($this->connection->query($sqlInsert) === true) {
-        //         $this->feedback = "New comment uploaded";
-        //     } else {
-        //         $this->feedback = 'There is an error, not uploaded';
-        //     }
-        // }
-        $this->connection->query($sqlInsert);
+        $sqlInsertComments = "INSERT INTO comments(`name`,`email`,`website`,`message`) VALUES ('$arg1', '$arg2', '$arg3', '$arg4')";
+        if ($this->connection->query($sqlInsertComments) === true) {
+            $this->commentsFeedback = "New comment uploaded!";
+        } else {
+            $this->commentsFeedback = 'There is an error, not uploaded!';
+        }
     }
 
+    // Insert contacts ===========================================================================================================
+    public function insertToContacts($ar1, $ar2, $ar3, $ar4)
+    {
+        $sqlInsertContacts = "INSERT INTO contacts(`firstName`,`lastName`,`email_contacts`,`message_contacts`) VALUES ('$ar1', '$ar2', '$ar3', '$ar4')";
+        if ($this->connection->query($sqlInsertContacts) === true) {
+            $this->contactsFeedback = "New contact uploaded!";
+        } else {
+            $this->contactsFeedback = 'There is an error, not uploaded!';
+        }
+    }
 
+    // Close Database ===========================================================================================================
     public function closeConnection()
     {
         $this->connection->close();
