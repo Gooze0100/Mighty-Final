@@ -7,6 +7,8 @@ function clearInput($input)
     return $input;
 }
 
+$inputFieldSub = '';
+
 $subEmail = '';
 $subEmailErr = '';
 $done = '';

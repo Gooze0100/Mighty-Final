@@ -3,6 +3,8 @@
 $contFirstName = $contLastName = $contEmail = $contMessage = '';
 $contFirstNameErr = $contLastNameErr = $contEmailErr = $contMessageErr = '';
 $contactUsDone = '';
+$inputFieldName = $inputFieldSurname = $inputFieldEmail = $contMessage = '';
+
 
 $name = false;
 $surname = false;
