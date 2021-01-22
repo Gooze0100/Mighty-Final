@@ -9,6 +9,7 @@ require('./includes/head.php');
 require('./includes/navigation.php');
 // <!-- Hero section ===============================================-->
 require('./includes/hero.php');
+$getDataFromDB = $db->getComments();
 ?>
 <!-- Main section ===============================================-->
 <section class="single-blocks padding-for-all-section">
@@ -147,6 +148,29 @@ require('./includes/hero.php');
                                 </p>
                             </div>
                         </li>
+                        <?php if (($getDataFromDB) > 0) {
+                            foreach ($getDataFromDB as $comment) : ?>
+                                <li class="comment-list">
+                                    <div class="vcard">
+                                        <img src="./images/persons_img_1.png" alt="Ooops no image found!">
+                                    </div>
+                                    <div class="comment-body">
+                                        <h3 class="comment-author"><?php echo $comment['name']; ?></h3>
+                                        <div class="meta"><?php $date = DateTime::createFromFormat('Y-m-j G:i:s', $comment['date']);
+                                                            echo date_format($date, "F j, Y");
+                                                            echo ' AT ';
+                                                            echo date_format($date, "g:i A");
+                                                            ?></div>
+                                        <p>
+                                            <?php echo $comment['message']; ?>
+                                        </p>
+                                        <p>
+                                            <a href="#">Reply</a>
+                                        </p>
+                                    </div>
+                                </li>
+                        <?php endforeach;
+                        } ?>
                     </ul>
                 </div>
                 <div class="comment-form">
