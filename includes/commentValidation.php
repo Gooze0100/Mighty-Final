@@ -2,7 +2,7 @@
 
 $commName = $commEmail = $commWebsite = $commMessage = '';
 $commNameErr = $commEmailErr = $commWebsiteErr = $commMessageErr = '';
-$inputFieldName = $inputFieldEmail = $inputFieldWebsite = $commMessage = '';
+$inputFieldName = $inputFieldEmail = $inputFieldWebsite = $commMessage = $commentsDone = '';
 
 $commentsName = false;
 $commentsEmail = false;
