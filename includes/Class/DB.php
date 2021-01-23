@@ -10,6 +10,7 @@ class DB
     public $feedback = '';
     public $commentsFeedback = '';
     public $contactsFeedback = '';
+    public $emailFeedback = '';
 
     // Connect to Database ===========================================================================================================
     public function __construct()
@@ -32,7 +33,7 @@ class DB
         if ($this->connection->query($sqlInsertComments) === true) {
             $this->commentsFeedback = "New comment uploaded!";
         } else {
-            $this->commentsFeedback = 'There is an error, not uploaded!';
+            $this->commentsFeedback = 'There is an error, comment not uploaded!';
         }
     }
 
@@ -59,7 +60,20 @@ class DB
         if ($this->connection->query($sqlInsertContacts) === true) {
             $this->contactsFeedback = "New contact uploaded!";
         } else {
-            $this->contactsFeedback = 'There is an error, not uploaded!';
+            $this->contactsFeedback = 'There is an error, contact not uploaded!';
+        }
+    }
+
+    // Email Subscription ===========================================================================================================
+
+    // Insert email to Database ===========================================================================================================
+    public function insertToEmails($arg1)
+    {
+        $sqlInsertContacts = "INSERT INTO subscription(`sub_email`) VALUES ('$arg1')";
+        if ($this->connection->query($sqlInsertContacts) === true) {
+            $this->emailFeedback = "New email uploaded!";
+        } else {
+            $this->emailFeedback = 'There is an error, email not uploaded!';
         }
     }
 

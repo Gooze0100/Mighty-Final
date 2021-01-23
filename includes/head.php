@@ -26,12 +26,17 @@ require('./includes/commentValidation.php');
 <body>
     <!-- Off-canvas menu======================================================================-->
     <div id="offcanvas-menu" class="offcanvas-menu"></div>
-    <!-- The Modal Box for Subscription======================================================================-->
+    <!-- The Modal Box for Email Subscription======================================================================-->
     <div id="modal" class="modal <?php echo $done ?>">
         <div class="modal-content">
             <span class="close-btn" id="closeBtn">&times;</span>
             <h1>Thank you</h1>
             <h2>for your subscription!</h2>
+            <div class="modal-footer">
+                <h3>
+                    <?php echo $db->emailFeedback ?>
+                </h3>
+            </div>
         </div>
     </div>
     <!-- The Modal Box for Contact Us======================================================================-->
@@ -40,10 +45,12 @@ require('./includes/commentValidation.php');
             <span class="close-btn-contact" id="closeContactBtn">&times;</span>
             <h1>Thanks you for contacting us!</h1>
             <h2>We will answer shortly!</h2>
-            <h3>
-                <?php echo $db->contactsFeedback; ?>
-            </h3>
             <a href="./index.php"><span><i class="fa fa-arrow-circle-o-left contact-arr" aria-hidden="true"></i></span>Back to main page</a>
+            <div class="modal-footer">
+                <h3>
+                    <?php echo $db->contactsFeedback; ?>
+                </h3>
+            </div>
         </div>
     </div>
     <!-- The Modal Box for Comments Page======================================================================-->
@@ -52,8 +59,10 @@ require('./includes/commentValidation.php');
             <span class="close-btn-comments" id="closeCommentsBtn">&times;</span>
             <h1>Thanks you for comments!</h1>
             <h2>We will get back to you soon!</h2>
-            <h3>
-                <?php echo $db->commentsFeedback; ?>
-            </h3>
+            <div class="modal-footer">
+                <h3>
+                    <?php echo $db->commentsFeedback; ?>
+                </h3>
+            </div>
         </div>
     </div>

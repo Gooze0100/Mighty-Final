@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnSub'])) {
             $subEmailErr = 'Invalid email address!';
             $inputFieldSub = 'input-border';
         } else {
+            $db->insertToEmails($subEmail);
+            unset($_POST['emailSub']);
             $subEmail = '';
             $inputFieldSub = '';
             $done = 'done';
