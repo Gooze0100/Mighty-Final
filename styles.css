@@ -152,9 +152,11 @@ li {
     left: 7%;
     font-size: 15px;
     margin: 15px auto;
+    height: 15px;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    transition: 0.5s all ease-in-out;
 }
 
 .db-info i {
