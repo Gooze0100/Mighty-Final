@@ -9,6 +9,7 @@ class DB
     private $connection;
     public $feedback = '';
     public $commentsFeedback = '';
+    public $commentsReplyFeedback = '';
     public $contactsFeedback = '';
     public $emailFeedback = '';
 
@@ -33,7 +34,7 @@ class DB
         if ($this->connection->query($sqlInsertComments) === true) {
             $this->commentsFeedback = "New comment uploaded!";
         } else {
-            $this->commentsFeedback = 'There is an error, comment not uploaded!';
+            $this->commentsFeedback = 'There is an error, reply not uploaded!';
         }
     }
 
@@ -47,7 +48,35 @@ class DB
         if ($getDataFromDB->num_rows > 0) {
             return $getDataFromDB->fetch_all(MYSQLI_ASSOC);
         } else {
-            $this->feedback = 'Error 0 rows!';
+            $this->commentsFeedback = 'Error 0 rows!';
+        }
+    }
+
+    // Comments Replies ===========================================================================================================
+
+    // Insert comments to Database ===========================================================================================================
+    public function insertReplyToDB($arg1, $arg2, $arg3)
+    {
+        $sqlInsertCommentsReply = "INSERT INTO replies(`name`,`email`,`message`) VALUES ('$arg1', '$arg2', '$arg3')";
+        if ($this->connection->query($sqlInsertCommentsReply) === true) {
+            $this->commentsReplyFeedback = "New reply uploaded!";
+        } else {
+            // parasyti modal box for feedback
+            $this->commentsReplyFeedback = 'There is an error, comment not uploaded!';
+        }
+    }
+
+    // Get replies from Database ===========================================================================================================
+
+    public function getReplies()
+    {
+        $sql = "SELECT * FROM `replies`";
+        $getDataFromDB = $this->connection->query($sql);
+
+        if ($getDataFromDB->num_rows > 0) {
+            return $getDataFromDB->fetch_all(MYSQLI_ASSOC);
+        } else {
+            $this->commentsReplyFeedback = 'Error 0 rows!';
         }
     }
 

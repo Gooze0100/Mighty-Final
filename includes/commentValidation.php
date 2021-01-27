@@ -1,8 +1,8 @@
 <?php
 
 $commName = $commEmail = $commWebsite = $commMessage = '';
-$commNameErr = $commEmailErr = $commWebsiteErr = $commMessageErr = '';
-$inputFieldName = $inputFieldEmail = $inputFieldWebsite = $commMessage = $commentsDone = '';
+$commNameErr = $commEmailErr = $commWebsiteErr = '';
+$inputFieldName = $inputFieldEmail = $inputFieldWebsite = $commentsDone = '';
 
 $commentsName = false;
 $commentsEmail = false;

@@ -1,9 +1,9 @@
 <?php
 
 $contFirstName = $contLastName = $contEmail = $contMessage = '';
-$contFirstNameErr = $contLastNameErr = $contEmailErr = $contMessageErr = '';
+$contFirstNameErr = $contLastNameErr = $contEmailErr = '';
 $contactUsDone = '';
-$inputFieldName = $inputFieldSurname = $inputFieldEmail = $contMessage = '';
+$inputFieldName = $inputFieldSurname = $inputFieldEmail = '';
 
 
 $name = false;

@@ -8,6 +8,8 @@ require('./includes/emailSub.php');
 require('./includes/contactValidation.php');
 // <!-- Single page validation ===============================================-->
 require('./includes/commentValidation.php');
+// <!-- Reply validation ===============================================-->
+require('./includes/replyValidation.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +64,41 @@ require('./includes/commentValidation.php');
             <div class="modal-footer">
                 <h3>
                     <?php echo $db->commentsFeedback; ?>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <!-- The Modal Box for Comments Reply======================================================================-->
+    <div id="modalCommentsReply" class="modal-comments-reply <?php echo $commentsDoneReply ?>">
+        <div class="modal-content-comments-reply">
+            <span class="close-btn-comments-reply" id="closeCommentsBtnReply">&times;</span>
+            <!-- Start of form -->
+            <div class="reply-comm">
+                <h3>Reply</h3>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="replyFullName" class="labels">Name *</label>
+                        <input type="text" class="form-control margin-top <?php echo $inputNameReply ?>" id="replyName" name="replyFullName" value="<?php echo $commNameReply ?>">
+                        <div class="input-error-reply" id="replyNameErr"><?php echo $commNameErrReply ?></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyEmail" class="labels">Email *</label>
+                        <input type="email" class="form-control margin-top <?php echo $inputEmailReply ?>" id="replyEmail" name="replyEmail" value="<?php echo $commEmailReply ?>">
+                        <div class="input-error-reply" id="replyEmailErr"><?php echo $commEmailErrReply ?></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="replyMessage" class="labels">Message</label>
+                        <textarea name="replyMessage" id="replyMessage" cols="30" rows="15" class="form-message margin-top"><?php echo $commMessageReply ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="commentBtn" name="btnCommentsReply" class="send-btn text-white">Post Reply</button>
+                    </div>
+                </form>
+            </div>
+            <!-- End of form -->
+            <div class="modal-footer">
+                <h3>
+                    <?php echo $db->commentsReplyFeedback; ?>
                 </h3>
             </div>
         </div>

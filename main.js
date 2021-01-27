@@ -22,7 +22,6 @@ offcanvasMenu.addEventListener('click', function() {
 });
 
 // Footer Subscription / Modal box ===========================================================
-// const footerBtn = document.querySelector('#btnModalBox');
 const modal = document.querySelector('#modal');
 const closeM = document.querySelector('#closeBtn');
 
@@ -84,6 +83,24 @@ function closeContactsOutside(e) {
 if (modalComments.classList.contains('done-contact')) {
     setTimeout(closeComments, 4000)
 }
+
+// Single Page / Reply / Modal box ===========================================================
+
+const modalCommentsReply = document.querySelector('#modalCommentsReply');
+const modalCloseCommentsReply = document.querySelector('#closeCommentsBtnReply');
+
+modalCloseCommentsReply.addEventListener('click', closeReply);
+window.addEventListener('click', closeReplyOutside)
+
+function closeReply() {
+    modalCommentsReply.style.display = 'none';
+}
+
+// function closeReplyOutside(e) {
+//     if (e.target == modalCommentsReply) {
+//         modalCommentsReply.style.display = 'none';
+//     }
+// }
 
 // Subscription validation ===========================================================
 const subEmailInput = document.querySelector('#subEmailInput');

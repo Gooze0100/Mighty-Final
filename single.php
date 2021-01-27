@@ -56,6 +56,7 @@ $getDataFromDB = $db->getComments();
                     </p>
                 </div>
                 <div class="comments-block" id="all-comments">
+                    <!-- padaryti kad skaiciuotu komentarus -->
                     <h3 class="comments-block-title">6 Comments</h3>
                     <ul class="comment-lists">
                         <li class="comment-list">
@@ -69,7 +70,9 @@ $getDataFromDB = $db->getComments();
                                     When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         </li>
@@ -84,7 +87,9 @@ $getDataFromDB = $db->getComments();
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         <li class="comment-list children1">
@@ -98,7 +103,9 @@ $getDataFromDB = $db->getComments();
                                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         </li>
@@ -113,7 +120,9 @@ $getDataFromDB = $db->getComments();
                                     A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         </li>
@@ -128,7 +137,9 @@ $getDataFromDB = $db->getComments();
                                     Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         </li>
@@ -144,7 +155,9 @@ $getDataFromDB = $db->getComments();
                                     Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
                                 </p>
                                 <p>
-                                    <a href="#">Reply</a>
+                                <form action="#" method="POST">
+                                    <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                </form>
                                 </p>
                             </div>
                         </li>
@@ -165,7 +178,9 @@ $getDataFromDB = $db->getComments();
                                             <?php echo $comment['message']; ?>
                                         </p>
                                         <p>
-                                            <a href="#">Reply</a>
+                                        <form action="#" method="POST">
+                                            <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                        </form>
                                         </p>
                                     </div>
                                 </li>
@@ -177,26 +192,26 @@ $getDataFromDB = $db->getComments();
                     <h3>Leave a comment</h3>
                     <form action="#all-comments" method="POST">
                         <div class="form-group">
-                            <label for="name">Name *</label>
+                            <label for="commFullName">Name *</label>
                             <input type="text" class="form-control margin-top <?php echo $inputFieldName ?>" id="commName" name="commFullName" value="<?php echo $commName ?>">
                             <div class="input-error-cont" id="commNameErr"><?php echo $commNameErr ?></div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="commEmail">Email *</label>
                             <input type="email" class="form-control margin-top <?php echo $inputFieldEmail ?>" id="commEmail" name="commEmail" value="<?php echo $commEmail ?>">
                             <div class="input-error-cont" id="commEmailErr"><?php echo $commEmailErr ?></div>
                         </div>
                         <div class="form-group">
-                            <label for="website">Website</label>
+                            <label for="commWebsite">Website</label>
                             <input type="url" class="form-control margin-top <?php echo $inputFieldWebsite ?>" id="commWebsite" name="commWebsite" value="<?php echo $commWebsite ?>">
                             <div class="input-error-cont" id="commWebsiteErr"><?php echo $commWebsiteErr ?></div>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="commMessage">Message</label>
                             <textarea name="commMessage" id="commMessage" cols="30" rows="15" class="form-message margin-top"><?php echo $commMessage ?></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Post Comment" id="commentBtn" name="btnComments" class="send-btn text-white">
+                            <button type="submit" id="commentBtn" name="btnComments" class="send-btn text-white">Post Comment</button>
                         </div>
                     </form>
                 </div>
