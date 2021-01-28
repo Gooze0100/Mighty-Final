@@ -68,7 +68,7 @@ require('./includes/replyValidation.php');
             </div>
         </div>
     </div>
-    <!-- The Modal Box for Comments Reply======================================================================-->
+    <!-- The Modal Box for Reply======================================================================-->
     <div id="modalCommentsReply" class="modal-comments-reply <?php echo $commentsDoneReply ?>">
         <div class="modal-content-comments-reply">
             <span class="close-btn-comments-reply" id="closeCommentsBtnReply">&times;</span>
@@ -96,10 +96,5 @@ require('./includes/replyValidation.php');
                 </form>
             </div>
             <!-- End of form -->
-            <div class="modal-footer">
-                <h3>
-                    <?php echo $db->commentsReplyFeedback; ?>
-                </h3>
-            </div>
         </div>
     </div>

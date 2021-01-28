@@ -59,6 +59,7 @@ class DB
     {
         $sqlInsertCommentsReply = "INSERT INTO replies(`name`,`email`,`message`) VALUES ('$arg1', '$arg2', '$arg3')";
         if ($this->connection->query($sqlInsertCommentsReply) === true) {
+            // istrinti feedback
             $this->commentsReplyFeedback = "New reply uploaded!";
         } else {
             // parasyti modal box for feedback

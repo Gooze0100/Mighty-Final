@@ -15,7 +15,9 @@
     </nav>
     <div class="db-info">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
-        <?php echo $db->feedback; ?>
+        <?php
+        echo $db->feedback;
+        ?>
     </div>
 </header>
 <section>
