@@ -96,6 +96,7 @@ function closeReply() {
     modalCommentsReply.style.display = 'none';
 }
 
+// Function to close reply modal box if clicked outside
 // function closeReplyOutside(e) {
 //     if (e.target == modalCommentsReply) {
 //         modalCommentsReply.style.display = 'none';
