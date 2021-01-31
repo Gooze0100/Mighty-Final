@@ -12,6 +12,8 @@ class DB
     public $commentsReplyFeedback = '';
     public $contactsFeedback = '';
     public $emailFeedback = '';
+    private $numberOfCommentsDB;
+    private $numberOfRepliesDB;
 
     // Connect to Database ===========================================================================================================
     public function __construct()
@@ -46,6 +48,7 @@ class DB
         $getDataFromDB = $this->connection->query($sql);
 
         if ($getDataFromDB->num_rows > 0) {
+            $this->numberOfCommentsDB = $getDataFromDB->num_rows;
             return $getDataFromDB->fetch_all(MYSQLI_ASSOC);
         } else {
             $this->commentsFeedback = 'Error 0 rows!';
@@ -55,16 +58,10 @@ class DB
     // Comments Replies ===========================================================================================================
 
     // Insert comments to Database ===========================================================================================================
-    public function insertReplyToDB($arg1, $arg2, $arg3)
+    public function insertReplyToDB($arg1, $arg2, $arg3, $arg4, $arg5)
     {
-        $sqlInsertCommentsReply = "INSERT INTO replies(`name`,`email`,`message`) VALUES ('$arg1', '$arg2', '$arg3')";
-        if ($this->connection->query($sqlInsertCommentsReply) === true) {
-            // istrinti feedback
-            $this->commentsReplyFeedback = "New reply uploaded!";
-        } else {
-            // parasyti modal box for feedback
-            $this->commentsReplyFeedback = 'There is an error, comment not uploaded!';
-        }
+        $sqlInsertCommentsReply = "INSERT INTO replies(`name`,`comment_id`,`reply_id`,`email`,`message`) VALUES ('$arg1', '$arg2', '$arg3', '$arg4', '$arg5')";
+        $this->connection->query($sqlInsertCommentsReply);
     }
 
     // Get replies from Database ===========================================================================================================
@@ -75,10 +72,19 @@ class DB
         $getDataFromDB = $this->connection->query($sql);
 
         if ($getDataFromDB->num_rows > 0) {
+            $this->numberOfRepliesDB = $getDataFromDB->num_rows;
             return $getDataFromDB->fetch_all(MYSQLI_ASSOC);
         } else {
             $this->commentsReplyFeedback = 'Error 0 rows!';
         }
+    }
+
+    // Number of rows in Databases ===========================================================================================================
+
+    public function numRows()
+    {
+        $numberOfRowsInDB = $this->numberOfRepliesDB + $this->numberOfCommentsDB;
+        echo $numberOfRowsInDB;
     }
 
     // Contacts ===========================================================================================================
