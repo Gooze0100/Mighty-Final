@@ -9,7 +9,10 @@ require('./includes/head.php');
 require('./includes/navigation.php');
 // <!-- Hero section ===============================================-->
 require('./includes/hero.php');
-$getDataFromDB = $db->getComments();
+// <!-- Get all Comments ===============================================-->
+$getDataFromCommentsDB = $db->getComments();
+// <!-- Get all Replies ===============================================-->
+$getDataFromRepliesDB = $db->getReplies();
 ?>
 <!-- Main section ===============================================-->
 <section class="single-blocks padding-for-all-section">
@@ -57,7 +60,7 @@ $getDataFromDB = $db->getComments();
                 </div>
                 <div class="comments-block" id="all-comments">
                     <!-- padaryti kad skaiciuotu komentarus -->
-                    <h3 class="comments-block-title">6 Comments</h3>
+                    <h3 class="comments-block-title"><?php $db->numRows(); ?> Comments</h3>
                     <ul class="comment-lists">
                         <li class="comment-list">
                             <div class="vcard">
@@ -161,11 +164,12 @@ $getDataFromDB = $db->getComments();
                                 </p>
                             </div>
                         </li>
-                        <?php if (($getDataFromDB) > 0) {
-                            foreach ($getDataFromDB as $comment) : ?>
+                        <!-- The start of comments foreach============================================================================================== -->
+                        <?php if (($getDataFromCommentsDB) > 0) {
+                            foreach ($getDataFromCommentsDB as $comment) : ?>
                                 <li class="comment-list">
                                     <div class="vcard">
-                                        <img src="./images/persons_img_1.png" alt="Ooops no image found!">
+                                        <img src="./images/person_4.jpg" alt="Ooops no image found!">
                                     </div>
                                     <div class="comment-body">
                                         <h3 class="comment-author"><?php echo $comment['name']; ?></h3>
@@ -178,14 +182,74 @@ $getDataFromDB = $db->getComments();
                                             <?php echo $comment['message']; ?>
                                         </p>
                                         <p>
-                                        <form action="#" method="POST">
+                                        <form action="single.php?id=<?php echo $comment['id'] ?>" method="POST">
                                             <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
                                         </form>
                                         </p>
                                     </div>
                                 </li>
+                                <!-- The start of replies foreach==============================================================================================-->
+                                <?php
+                                if (($getDataFromRepliesDB) > 0) {
+                                    foreach ($getDataFromRepliesDB as $reply) :
+                                        if ($comment['id'] === $reply['comment_id']) :
+                                ?>
+                                            <li class="comment-list children1">
+                                                <div class="vcard">
+                                                    <img src="./images/person_3.jpg" alt="Ooops no image found!">
+                                                </div>
+                                                <div class="comment-body">
+                                                    <h3 class="comment-author"><?php echo $reply['name']; ?></h3>
+                                                    <div class="meta"><?php $date = DateTime::createFromFormat('Y-m-j G:i:s', $reply['date']);
+                                                                        echo date_format($date, "F j, Y");
+                                                                        echo ' AT ';
+                                                                        echo date_format($date, "g:i A");
+                                                                        ?></div>
+                                                    <p>
+                                                        <?php echo $reply['message']; ?>
+                                                    </p>
+                                                    <p>
+                                                    <form action="single.php?replyId=<?php echo $reply['id'] ?>" method="POST">
+                                                        <button class="reply-btn" type="submit" name="replyBtn">Reply</button>
+                                                    </form>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <!-- The start of replies foreach==============================================================================================-->
+                                            <?php
+                                            if (($getDataFromRepliesDB) > 0) {
+                                                foreach ($getDataFromRepliesDB as $replyToReply) :
+                                                    if ($reply['id'] === $replyToReply['reply_id']) :
+                                            ?>
+                                                        <li class="comment-list children2">
+                                                            <div class="vcard">
+                                                                <img src="./images/person_2.jpg" alt="Ooops no image found!">
+                                                            </div>
+                                                            <div class="comment-body">
+                                                                <h3 class="comment-author"><?php echo $replyToReply['name']; ?></h3>
+                                                                <div class="meta"><?php $date = DateTime::createFromFormat('Y-m-j G:i:s', $replyToReply['date']);
+                                                                                    echo date_format($date, "F j, Y");
+                                                                                    echo ' AT ';
+                                                                                    echo date_format($date, "g:i A");
+                                                                                    ?></div>
+                                                                <p>
+                                                                    <?php echo $replyToReply['message']; ?>
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                            <?php
+                                                    endif;
+                                                endforeach;
+                                            } ?>
+                                            <!-- The end of replies foreach============================================================================================== -->
+                                <?php
+                                        endif;
+                                    endforeach;
+                                } ?>
+                                <!-- The end of replies foreach============================================================================================== -->
                         <?php endforeach;
                         } ?>
+                        <!-- The end of comments foreach============================================================================================== -->
                     </ul>
                 </div>
                 <div class="comment-form">
