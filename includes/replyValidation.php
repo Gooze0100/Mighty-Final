@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnCommentsReply'])) 
     // Flags ====================================================================================
     if (($replyName != false) && ($replyEmail != false)) {
 
-        $db->insertReplyToDB($commNameReply, $commEmailReply, $commMessageReply);
+        $db->insertReplyToDB($commNameReply, $_GET['id'], $_GET['replyId'], $commEmailReply, $commMessageReply);
 
         unset($_POST);
         $commNameReply = $commEmailReply = $commMessageReply = $commentsDoneReply = '';
