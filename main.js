@@ -62,35 +62,13 @@ function closeContactOutside(e) {
 if (modalContactUs.classList.contains('done-contact')) {
     setTimeout(closeContactUs, 4000)
 }
-
-// Single Page / Comments / Modal box ===========================================================
-const modalComments = document.querySelector('#modalComments');
-const modalCloseComments = document.querySelector('#closeCommentsBtn');
-
-modalCloseComments.addEventListener('click', closeComments);
-window.addEventListener('click', closeContactsOutside)
-
-function closeComments() {
-    modalComments.style.display = 'none';
-}
-
-function closeContactsOutside(e) {
-    if (e.target == modalComments) {
-        modalComments.style.display = 'none';
-    }
-}
-
-if (modalComments.classList.contains('done-contact')) {
-    setTimeout(closeComments, 4000)
-}
-
 // Single Page / Reply / Modal box ===========================================================
 
 const modalCommentsReply = document.querySelector('#modalCommentsReply');
 const modalCloseCommentsReply = document.querySelector('#closeCommentsBtnReply');
 
 modalCloseCommentsReply.addEventListener('click', closeReply);
-window.addEventListener('click', closeReplyOutside)
+// window.addEventListener('click', closeReplyOutside)
 
 function closeReply() {
     modalCommentsReply.style.display = 'none';

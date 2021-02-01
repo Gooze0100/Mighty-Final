@@ -36,7 +36,6 @@ li {
 .container {
     margin: 0 auto;
     position: relative;
-    /* z-index: 2; */
     max-width: 1200px;
 }
 
@@ -46,7 +45,7 @@ li {
     width: 0;
     position: fixed;
     right: 0;
-    z-index: 2000;
+    z-index: 6;
     padding-top: 20px;
     background-color: #fff;
     height: calc(100vh);
@@ -110,7 +109,7 @@ li {
     position: absolute;
     width: 100%;
     top: 0;
-    z-index: 1998;
+    z-index: 4;
 }
 
 .start {
@@ -136,7 +135,7 @@ li {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 1999;
+    z-index: 5;
     background-color: rgba(0, 0, 0, 0.4);
     transition: 0.3s all ease-in-out;
 }
@@ -185,9 +184,8 @@ li {
 }
 
 .single-main-title {
-    transform: translate(0);
     opacity: 1;
-    transition: 5s all ease-in-out;
+    transition: 0.3s all ease-in-out;
 }
 
 .foam-hero {
@@ -1440,7 +1438,7 @@ footer {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2500;
+    z-index: 7;
     left: 0;
     top: 0;
     height: 100vh;
@@ -1488,7 +1486,7 @@ footer {
 .modal-contact {
     display: none;
     position: fixed;
-    z-index: 2500;
+    z-index: 7;
     left: 0;
     top: 0;
     height: 100vh;
@@ -1535,50 +1533,6 @@ footer {
     animation-duration: 1s;
 }
 
-/* Modal Box for comments page =========================================================== */
-
-.modal-comments {
-    display: none;
-    position: fixed;
-    z-index: 2500;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content-comments {
-    background-color: #efefef;
-    margin: 20% auto;
-    padding: 20px;
-    width: 60%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-    border: 8px solid #01d28e;
-    text-align: center;
-    color: #364d59;
-}
-
-.close-btn-comments {
-    color: rgb(1, 210, 142);
-    float: right;
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.3s all;
-}
-
-.close-btn-comments:focus, .close-btn-comments:hover {
-    color: rgb(1, 134, 91);
-}
-
-.done-comments {
-    display: block;
-    animation-name: openModalForComm;
-    animation-duration: 1s;
-}
-
 /* Modal Box for comments reply =========================================================== */
 
 .reply-comm {
@@ -1602,7 +1556,7 @@ footer {
 .modal-comments-reply {
     display: none;
     position: fixed;
-    z-index: 2500;
+    z-index: 7;
     left: 0;
     top: 0;
     height: 100vh;
@@ -1660,11 +1614,6 @@ footer {
     to {opacity: 1}
 }
 
-@keyframes openModalForComm {
-    from {opacity: 0}
-    to {opacity: 1}
-}
-
 @keyframes openModalForCommReply {
     from {opacity: 0}
     to {opacity: 1}
@@ -1675,6 +1624,10 @@ footer {
 @media screen and (max-width: 1400px) {
     .modal-content-comments-reply {
         width: 50%;
+    }
+
+    .modal-content-contact {
+        width: 70%;
     }
 }
 
@@ -1717,6 +1670,14 @@ footer {
 
     .our-team-block {
         width: 45%;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .modal-content-contact {
+        width: 80%;
     }
 
     .modal-content-comments-reply {
