@@ -33,11 +33,7 @@ class DB
     public function insertToDB($arg1, $arg2, $arg3, $arg4)
     {
         $sqlInsertComments = "INSERT INTO comments(`name`,`email`,`website`,`message`) VALUES ('$arg1', '$arg2', '$arg3', '$arg4')";
-        if ($this->connection->query($sqlInsertComments) === true) {
-            $this->commentsFeedback = "New comment uploaded!";
-        } else {
-            $this->commentsFeedback = 'There is an error, reply not uploaded!';
-        }
+        $this->connection->query($sqlInsertComments);
     }
 
     // Get comments from Database ===========================================================================================================
