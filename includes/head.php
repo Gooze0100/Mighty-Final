@@ -55,19 +55,6 @@ require('./includes/replyValidation.php');
             </div>
         </div>
     </div>
-    <!-- The Modal Box for Comments Page======================================================================-->
-    <div id="modalComments" class="modal-comments <?php echo $commentsDone ?>">
-        <div class="modal-content-comments">
-            <span class="close-btn-comments" id="closeCommentsBtn">&times;</span>
-            <h1>Thanks you for comments!</h1>
-            <h2>We will get back to you soon!</h2>
-            <div class="modal-footer">
-                <h3>
-                    <?php echo $db->commentsFeedback; ?>
-                </h3>
-            </div>
-        </div>
-    </div>
     <!-- The Modal Box for Reply======================================================================-->
     <div id="modalCommentsReply" class="modal-comments-reply <?php echo $commentsDoneReply ?>">
         <div class="modal-content-comments-reply">
