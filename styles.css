@@ -1621,6 +1621,7 @@ footer {
     border: 8px solid #01d28e;
     text-align: center;
     color: #364d59;
+    transition: 0.3s all ease-in-out;
 }
 
 .close-btn-comments-reply {
@@ -1671,6 +1672,12 @@ footer {
 
 /* Media =========================================================== */
 
+@media screen and (max-width: 1400px) {
+    .modal-content-comments-reply {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         max-width: 960px;
@@ -1710,6 +1717,10 @@ footer {
 
     .our-team-block {
         width: 45%;
+    }
+
+    .modal-content-comments-reply {
+        width: 70%;
     }
 }
 
@@ -1815,6 +1826,10 @@ footer {
     .modal-content-contact {
         width: 100%;
     }
+
+    .modal-content-comments-reply {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -1874,6 +1889,10 @@ footer {
     .modal-content-contact {
         width: 100%;
     }
+
+    .modal-content-comments-reply {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1889,5 +1908,9 @@ footer {
     .information-about-services-block {
         flex: 0 0 100%;
         align-items: flex-start;
+    }
+
+    .modal-content-comments-reply {
+        width: 100%;
     }
 }
