@@ -66,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['btnComments'])) {
         $db->insertToDB($commName, $commEmail, $commWebsite, $commMessage);
 
         unset($_POST);
-        $commentsDone = 'done-comments';
         header('Location: single.php#all-comments');
         $commName = $commEmail = $commWebsite = $commMessage = '';
     }
