@@ -113,7 +113,7 @@ li {
 }
 
 .start {
-    /* Jei nori padaryti position:sticky reikia uzdeti top */
+    /* If you want to make it sticky you need to set up Top */
     padding: 16px;
     transition: 0.3s all ease-in-out;
 }
@@ -489,7 +489,7 @@ li {
 }
 
 .our-work-image a {
-    /* Padaro kad priartetu, bet neisplestu uz ribu ===================== */
+    /* Makes that it zoom, but not get out of bounds */
     display: inline-flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -527,7 +527,7 @@ li {
 }
 
 .our-work-image a:hover span {
-    /* Pliusas atsiranda po hover */
+    /* Plus appears after hover */
     visibility: visible;
     opacity: 1;
 }
