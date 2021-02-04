@@ -59,7 +59,6 @@ $getDataFromRepliesDB = $db->getReplies();
                     </p>
                 </div>
                 <div class="comments-block" id="all-comments">
-                    <!-- padaryti kad skaiciuotu komentarus -->
                     <h3 class="comments-block-title"><?php $db->numRows(); ?> Comments</h3>
                     <ul class="comment-lists">
                         <!-- The start of comments foreach============================================================================================== -->
