@@ -14,6 +14,7 @@
                 }
                 ?>">
         <?php
+        // pasidaryti tipo kad pabaigti php tada atidaryti ir vel ir pan.
         if ($title === 'Single Blog') {
             echo '
                 <div class="single-page-date">
