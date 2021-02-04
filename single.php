@@ -152,7 +152,7 @@ $getDataFromRepliesDB = $db->getReplies();
                 </div>
                 <div class="comment-form">
                     <h3>Leave a comment</h3>
-                    <form action="#all-comments" method="POST">
+                    <form method="POST">
                         <div class="form-group">
                             <label for="commFullName">Name *</label>
                             <input type="text" class="form-control margin-top <?php echo $inputFieldName ?>" id="commName" name="commFullName" value="<?php echo $commName ?>">
